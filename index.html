@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<script src="http://js.leapmotion.com/leap-0.6.4.js"></script>
+		<script src="osc.js/dist/osc-browser.min.js"></script>
+		<style>
+		  .circle {
+		    border: 3px solid red;
+		    background-color: red;
+		    border-radius: 50%;
+		    width: 100px; height: 100px;
+		    -moz-box-sizing: border-box;
+		    box-sizing: border-box;
+		  }
+		  #circle_box {
+		  	height: 300px;
+		  	width: 80%;
+		  	margin: auto;
+		  }
+		  .centered {
+		  	position: relative;
+		  	margin: auto;
+			top: 50%;
+			transform: translateY(-50%);
+		  }
+		  #palm_circle_left {
+		  	float: left;
+		  }
+		  #palm_circle_right {
+		  	float: right;
+		  	border-color: blue;
+		  	background-color: blue;
+		  }
+		</style>
+	</head>
+	<body>
+		<h1>VRTEX</h1>
+		<div id="circle_box">
+			<div id="palm_circle_left" class="circle centered"></div>
+			<div id="palm_circle_right" class="circle centered"></div>
+		</div>
+		<div id="output"></div>
+
+		<script src="http://127.0.0.1:8081/socket.io/socket.io.js"></script>
+		<script src="osc_stuff.js"></script>
+
+		<script src="leap_stuff.js"></script>
+
+		<button onClick="startWebSocket()">Start WebSocket</button>
+		<button onClick='sendOSCData()'>Send OSC Data</button>
+		<button onClick="sendOSCDataWithOSCJS()">Try osc.js</button>
+
+	</body>
+</html>

@@ -1,2 +1,0 @@
-# VRTex-leap
-Hop!
